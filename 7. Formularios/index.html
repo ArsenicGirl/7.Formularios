@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="dataform" method="post" action="./backend/receive.php"> <!--placeholder es una etiqueta temporal que desaparece al rellenar-->
+       <fieldset><legend>Datos personales</legend>
+        <label for="name"></label>
+        <input type="text"
+        id="name"
+        name="name"
+        placeholder="Introduce tu nombre"
+        minlength="3"
+        maxlength="50"
+        title="Introduce al menos 3 caracteres máximo 50"
+        tabindex="0"
+        autofocus="true"
+        autocomplete="off"
+        required><br><br> <!--minlength y maxlength es el minimo y maximo de caracteres-->
+        <!--"required" hace que sea obligatorio-->
+
+       <select id="typeDocument">
+        <option value="nada"select="selected">seleccione un tipo de documento</option>
+        <option value="cc">Cedula de ciudadania</option>
+        <option value="ti">Tarjeta de identidad</option>
+        <option value="ce">Tarjeta de identidad</option>
+
+       </select><br> <!--"type= number" solo se introducen numeros, no letras-->
+       
+       <label for="document">No documento:</label>
+       <input type="number" 
+        id="document" 
+        name="document" 
+        placeholder="Introduce tu documento de identidad"
+        min="2"
+        max="999999999"
+        tabindex="1"><br><br>
+        <label for= "estadoCivil">Estado civil:</label>
+        <input type="radio" name="eCivil" id="eCivil" value="Soltero">Soltero(a)
+        <input type="radio" name="eCivil" id="eCivil" value="Casado">Casado(a)
+        <input type="radio" name="eCivil" id="eCivil" value="Divor">Divorciado(a)
+        <input type="radio" name="eCivil" id="eCivil" value="Viudo">Viudo(a)
+                <!--el "name" es obligatorio para que no se pueda elegir mas de una-->
+        <br><br>
+             <label for="colores">color favorito:</label>
+             <input type="color" id="colores">
+             <br><br>
+             <label for="dateInsc">Fecha de inscripción:</label>
+        <input type= "date" id="dateInsc"><br><br>
+       
+        <label for="tel">Introduce tu número telefónico:</label>
+        <input type="tel" id="tel" name="tel" placeholder="Introduce tu número de telefono"
+        min="3"
+        max="999999999"><br><br>
+
+        <label for="documentfile">cargue los documentos requeridos:</label>
+         <input type="file" name="file" id="documentfile"><br><br>
+         
+        <label for="textarea">Hablanos sobre ti:</label><br>
+
+         <textarea id="textarea" name="textarea" rows="4" cols="50">Escribe una breve introducción sobre ti
+         </textarea>        
+            </fieldset> 
+   
+    <fieldset><legend>Información de estudio y otros</legend>
+    <hr>
+    <label for="lenguajes">lenguajes de programacion</label>
+    <select id="Lenguajes" name="lenguajes">
+        <optgroup label="lenguajes tipados">
+            <option value="Java">Java</option>
+            <option value="cSharp">C#</option>
+            <option value="c">C++</option>
+        </optgroup>
+        <optgroup label="lenguajes no tipados">
+            <option value="Pyhton">Python</option>
+            <option value="js">JavaScript</option>
+        </optgroup>
+    </select><br><br>
+
+    <label for="datalist">Seleccione que tipo de buscador suele usar:</label>
+        <input list="buscador" name="datalist" id="datalist">
+        
+        <datalist id="buscador">
+          <option value="Edge">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist><br><br>
+
+    <label for="time">Introduce tu hora de llegada al trabajo:</label>
+    <input type="time" id="time" name="time"
+       min="01:00" max="59:00" required><br><br>
+      
+       <label for="week">Introduce la fecha en la cual comenzaste a trabajar:</label>
+    <input type="week" name="week" id="week"
+       min="2018-W18" max="2022-W26" required><br><br>
+
+       <label for="range">Seleccione el rango en el que considera que se encuentra su habilidad en progrmación</label>
+       <input type="range"><br>
+       <label for="range">Seleccione el rango en el que considera que se encuentra su habilidad de trabajo en equipo</label>
+       <input type="range"><br>
+       <label for="range">Seleccione el rango en el que considera que se encuentra su grado de responsabilidad</label>
+       <input type="range"><br><br>
+           
+<label for="url">Introduce un https:// URL: hacia tu pagina de presentación: </label><br>
+<input type="url" name="url" id="url"
+       placeholder="https://example.com"
+       pattern="https://.*" size="38"
+       required><br><br>
+
+
+</fieldset>
+<input id="prodId" name="prodId" 
+type="hidden" value="La información suministrada no será divulgada con terceros"><br><br>
+    <label for="acepta">¿Acepta términos y condiciones?</label>
+    <input type="checkbox" id="terminos">
+    <hr>
+    <input type="submit" value="envio de datos"><!--PHP-->
+    <button id="validar"> Validar</button><!--JS-->
+    <input type="reset" value="restablecer">
+    <button id="reset"></button>
+
+    <!--time range tel week url reset textarea datalist y hidden-->
+    
+
+    </form>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
